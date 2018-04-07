@@ -127,10 +127,10 @@ This is the data structure in Dafny to store values for set. Each node has a var
     }
   }
   ```
-  ```
-  To insert values into a set, Dafny provide two different interfaces to users. These two method have two and three parameters respectively. For each insertion, the stored value always recursive follow the rules that the value of node always greater than values stored in its left subtree and smaller than values stored in its right subtree.
   
-  ```
+  To insert values into a set, Dafny provide two different interfaces to users. These two method have two and three parameters respectively. For each insertion, the stored value always recursive follow the rules that the value of node always greater than values stored in its left subtree and smaller than values stored in its right subtree.
+ 
+ 
 ## References:
 https://github.com/Microsoft/dafny/blob/171ef037493eed6a90423c6497c8ba88de077de9/Source/Jennisys/examples/set.dfy 
 https://github.com/Microsoft/dafny/blob/171ef037493eed6a90423c6497c8ba88de077de9/Source/Dafny/Compiler.cs
