@@ -5,16 +5,16 @@ Verify the feasibility of implement multimap in Dafny.
 
 ## updates on 4/6
 In order to understand the way to implement map in Dafny, we first analyse the source code in Dafny to implement a set. As we all know that set is a container used to store a bunch of values and the data in set shouldn't be the same. Multiset is almost the same as set, but it doesn't need the value stored in multiset to be unique. Map and multimap have the same potential theory as set and multiset, instead to store single data, they are used to store key-value pairs. And we can use the key to search corresponding values. The source code shows that unlike Java or C++ the set in Dafny is based on the normal binary search tree. 
-'''
+```
   ghost var Repr: set<object>;
   ghost var elems: set<int>;
 
   var data: int;
   var left: SetNode;
   var right: SetNode;
-'''
+```
 This is the data structure in Dafny to store values for set. Each node has a varable "data" used to store the value and two SetNode variable used to point to the left and right subtrees.
-'''
+```
    method Double(p: int, q: int)
     modifies this;
 //    requires p != q;
@@ -126,12 +126,12 @@ This is the data structure in Dafny to store values for set. Each node has a var
       }
     }
   }
-  '''
+  ```
   
   To insert values into a set, Dafny provide two different interfaces to users. These two method have two and three parameters respectively. For each insertion, the stored value always recursive follow the rules that the value of node always greater than values stored in its left subtree and smaller than values stored in its right subtree.
   
   
-References:
+##References:
 https://github.com/Microsoft/dafny/blob/171ef037493eed6a90423c6497c8ba88de077de9/Source/Jennisys/examples/set.dfy 
 https://github.com/Microsoft/dafny/blob/171ef037493eed6a90423c6497c8ba88de077de9/Source/Dafny/Compiler.cs
 https://github.com/Microsoft/dafny/blob/171ef037493eed6a90423c6497c8ba88de077de9/Binaries/DafnyRuntime.cs 
